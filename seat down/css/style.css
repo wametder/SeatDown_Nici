@@ -1,0 +1,488 @@
+/*Inter-Schrift importieren und definieren*/
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/inter.ttf");
+}
+
+/*Variable definieren*/
+:root {
+    --green: #6CBF69;
+    --creme: #F1E3C1;
+    --red: #BF1F1F;
+}
+
+/*Generelle Einstellungen*/
+::selection {
+    background: var(--green);
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+}
+
+h1 {
+    color: var(--green);
+    font-size: 28px;
+}
+
+h2 {
+    color: var(--green);
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+button {
+    background-color: var(--green);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: .33s;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: transparent;
+    color: var(--green);
+    border: 2px solid var(--green);
+}
+
+.highlight {
+    color: var(--green);
+}
+
+/*Für jede Seite gleich*/
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav {
+    padding: 10px 0px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    /*Damit Nav beim Scrollen über anderen Element angezeigt wird*/
+    width: 100%;
+}
+
+.nav_links {
+    margin: 0 2%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 100%;
+    padding: 0;
+}
+
+.nav_links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav_links li a {
+    color: black;
+    text-decoration: none;
+    transition: .33s;
+    /*Damit es eine transition bei einem Hover gibt*/
+}
+
+.nav_links li a:hover {
+    color: var(--green);
+}
+
+.nav_logo {
+    height: 30px;
+    padding-right: 10px
+}
+
+footer {
+    height: 120px;
+    box-sizing: border-box;
+    background-color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 2%;
+}
+
+.footer_text {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer_text a {
+    color: white;
+}
+
+.footer_text a:hover {
+    color: var(--creme)
+}
+
+.footer_logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rounded_logo {
+    height: 100%;
+    border-radius: 10%;
+}
+
+.download_logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.download_logos img {
+    height: 40%;
+}
+
+/*Ab hier für index.html*/
+
+/*Bild unterhalb von Header*/
+.entry_image {
+    position: relative;
+    height: 300px;
+}
+
+.entry_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.entry_text {
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+}
+
+.entry_text h2 {
+    margin-bottom: 30px;
+}
+
+.entry_text a {
+    background-color: var(--green);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: .33s;
+    border: 2px solid transparent;
+    border-radius: 25px;
+}
+
+.entry_text a:hover {
+    background-color: transparent;
+    color: var(--green);
+    border: 2px solid var(--green);
+}
+
+/*Info-Section*/
+.info_creme {
+    background-color: var(--creme);
+    padding: 8% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.info_white {
+    background-color: white;
+    padding: 10% 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.key_facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.key_facts p {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--creme);
+    padding: 10px 2px;
+    font-weight: bold;
+    border-radius: 10%;
+}
+
+.values {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.single_value {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.single_value img {
+    width: 100%;
+}
+
+@media(min-width: 700px) {
+
+    /*Generelle Einstellungen*/
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+
+    /*Info-Section*/
+    .info_white {
+        padding: 10% 15%;
+    }
+
+    .key_facts {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .values {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .single_value {
+        width: 30%;
+    }
+
+    .single_value img {
+        width: 50%;
+    }
+}
+
+@media(min-width: 1000px) {
+
+    /*Generelle Einstellungen*/
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 45px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+
+    p,
+    a {
+        font-size: 20px;
+    }
+
+    /*Für jede Seite gleich*/
+    .nav_links {
+        gap: 20px;
+    }
+
+    .nav_logo {
+        height: 50px;
+    }
+
+    footer {
+        height: 150px;
+    }
+
+    .footer_logos {
+        gap: 30px;
+    }
+
+    /*Bild unterhalb von Header*/
+    .entry_image {
+        height: 600px;
+    }
+
+    .entry_text {
+        bottom: 70px;
+        left: 60px;
+    }
+
+    .entry_text a {
+        font-size: 20px;
+    }
+
+    /*Info-Section*/
+    .info_white {
+        padding: 7% 10%;
+        gap: 100px;
+    }
+
+    .key_facts {
+        gap: 40px;
+    }
+
+    .key_facts p {
+        font-size: 30px;
+        height: 100px;
+        width: 250px;
+        padding: 20px 10px;
+        border-radius: 10%;
+    }
+
+    .values {
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    .single_value img {
+        width: 70%;
+    }
+}
+
+/* ABOUT US */
+
+.text_creme {
+    background-color: var(--creme);
+    padding: 8% 4%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title_about1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+.about_white{
+    background-color: white;
+}
+.about_creme{
+    background-color: var(--creme);
+}
+.about1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4% 4%;
+    text-align: center;
+}
+
+.aboutus_img{
+        width: 30%;
+}
+
+.aboutus_img img {
+        width: 100%;
+}
+
+.Person{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.h3green{
+    color: var(--green);
+}
+.h3red{
+    color: var(--red);
+}
+
+@media(min-width: 700px){
+    .about1{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0% 4%;
+    }
+    /* .about1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        padding:  8% 4%;
+    } */
+
+    .aboutus_img{
+            width: 300%;
+            /* display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; */
+    }
+
+    .aboutus_img img {
+            width: 100%;
+    }
+
+}
+
+@media(min-width: 1000px){
+    .about1{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0%% 4%;
+    }
+    /* .about1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        padding:  8% 4%;
+    } */
+
+    .aboutus_img{
+            width: 200%;
+            /* display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; */
+    }
+
+    .aboutus_img img {
+            width: 100%;
+    }
+
+}
